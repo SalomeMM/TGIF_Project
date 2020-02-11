@@ -1,53 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
 
-    </head>
-    
-    <body>
-         <nav>
-          <div>
-            <div>
-              <a href="#">TGIF</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>TGIF Home</title>
+  <link rel="icon" type="image/png" href="images\favicon.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bootstrap.css">
+  <script src="https://kit.fontawesome.com/369310aabb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <!--header with logo-->
+    <div class="header row d-flex flex-row col-sm-12">
+      <div class="col-sm-6 header-logo">
+        <a href="index.html"><img class="img-responsive img-fluid congress-logo"
+            src="images\20170801080750-39e2e392-2.jpg"></a>
+      </div>
+      <div class="input-group col-sm-4">
+        <input type="text" class="form-control" placeholder="Search">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+      <div class="input-group col-sm-2">
+        <button type="button" class="btn btn-outline-light contact-btn"><a
+            href="mailto:info@tgif.net">Contact</a></button>
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="button">
+            <a href="mailto:info@tgif.net"><i class="far fa-envelope envelope-link"></i></a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--end header with logo-->
+    <!--navigation bar-->
+    <nav class="navbar navbar-expand-lg navbar-light col-sm-12">
+      <div class="navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Congress 113
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="house-data.html">House</a>
+              <a class="dropdown-item" href="senate-data.html">Senate</a>
             </div>
-            <ul >
-              <li><a href="#">Home</a></li>
-              <li >
-                <a href="#">Congress 113</a>
-                <ul >
-                  <li><a href="#">Senate</a></li>
-                  <li><a href="#">House</a></li>
-                </ul>
-              </li>
-            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Attendance
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="house-attendance.html">House</a>
+              <a class="dropdown-item" href="senate-attendance.html">Senate</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Party Loyalty
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="house-loyalty.html">House</a>
+              <a class="dropdown-item" href="senate-loyalty.html">Senate</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--end navigation bar-->
+  </header>
+
+  <main>
+
+    <!--Page content-->
+
+    <div class="col-sm-9">
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link home-acc-link" data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                About Us
+              </button>
+            </h5>
           </div>
-        </nav>        
-  
 
-        <header>            
-            <div>
-            	<p>https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment</p>
-
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <p>
+                Openness, accountability, and honesty define government transparency. In
+                a free society, transparency is government's obligation to share
+                information with citizens. It is at the heart of how citizens hold their
+                public officials accountable. Here at TGIF we believe that government
+                should be transparent.
+              </p>
+              <p>
+                Governments exist to serve the people. Information on how officials
+                conduct the public business and spend taxpayer money must be readily
+                available and easily understood. This transparency allows good and just
+                governance. Transparency promotes accountability and provides
+                information for citizens about what their Government is doing.
+              </p>
+              <p>
+                We also believe that government should be participatory. Public
+                engagement enhances the Government's effectiveness and improves the
+                quality of its decisions. Knowledge is widely dispersed in society, and
+                public officials benefit from having access to that dispersed knowledge.
+                We invite you to use our site to become actively engaged in American
+                government.
+              </p>
+              <p>
+                TGIF works to disclose information in forms that the public can readily
+                find and use. We solicit public feedback to identify information of
+                greatest use to the public.
+              </p>
             </div>
-        </header>
-        <!--Table container-->
-        <div>
-            <h2>About Us</h2>
-            <p>Openness, accountability, and honesty define government transparency. In a free society, transparency is government's obligation to share information with citizens. It is at the heart of how citizens hold their public officials accountable. Here at TGIF we believe that government should be transparent.</p>  
-            <p>Governments exist to serve the people. Information on how officials conduct the public business and spend taxpayer money must be readily available and easily understood. This transparency allows good and just governance.  Transparency promotes accountability and provides information for citizens about what their Government is doing.</p>  
-            <p>We also believe that government should be participatory. Public engagement enhances the Government's effectiveness and improves the quality of its decisions. Knowledge is widely dispersed in society, and public officials benefit from having access to that dispersed knowledge. We invite you to use our site to become actively engaged in American government.</p>
-            <p>TGIF works to disclose information in forms that the public can readily find and use. We solicit public feedback to identify information of greatest use to the public.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed home-acc-link" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                Background History of Government Transparency
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              <p>
+                In the West, the idea that government should be open to public scrutiny
+                and susceptible to public opinion dates back at least to the time of the
+                Enlightenment, when many philosophes made an attack on absolutist
+                doctrine of state secrecy, a core part of their intellectual project.
+                The passage of formal legislative instruments to this end can also be
+                traced to this time with Sweden, for example, (which then included
+                Finland as a Swedish-governed territory) enacting free press legislation
+                as part of its constitution (Freedom of the Press Act, 1766). This
+                approach, and that of the philosophes more broadly, is strongly related
+                to recent historiography on the eighteenth-century public sphere.
+              </p>
 
-            <h3>Background History of Government Transparency</h3>
-            <p>In the West, the idea that government should be open to public scrutiny and susceptible to public opinion dates back at least to the time of the Enlightenment, when many philosophes made an attack on absolutist doctrine of state secrecy, a core part of their intellectual project. The passage of formal legislative instruments to this end can also be traced to this time with Sweden, for example, (which then included Finland as a Swedish-governed territory) enacting free press legislation as part of its constitution (Freedom of the Press Act, 1766). This approach, and that of the philosophes more broadly, is strongly related to recent historiography on the eighteenth-century public sphere.
+              <p>
+                Influenced by Enlightenment thought, the revolutions in America (1776)
+                and France (1789), freedom of the press enshrined provisions and
+                requirements for public budgetary accounting and freedom of the press in
+                constitutional articles. In the nineteenth century, attempts by
+                Metternichean statesmen to row back on these measures were vigorously
+                opposed by a number of eminent liberal politicians and writers, Bentham,
+                Mill and Acton prominent among the latter.
+              </p>
 
-      			<p>Influenced by Enlightenment thought, the revolutions in America (1776) and France (1789), freedom of the press enshrined provisions and requirements for public budgetary accounting and freedom of the press in constitutional articles. In the nineteenth century, attempts by Metternichean statesmen to row back on these measures were vigorously opposed by a number of eminent liberal politicians and writers, Bentham, Mill and Acton prominent among the latter.</p>
+              <p>
+                Open government is widely seen to be a key hallmark of contemporary
+                democratic practice and is often linked to the passing of freedom of
+                information legislation. Scandinavian countries claim to have adopted
+                the first freedom of information legislation, dating the origins of its
+                modern provisions to the eighteenth century and Finland continuing the
+                presumption of openness after gaining independence in 1917, passing its
+                Act on Publicity of Official Documents in 1951 (superseded by new
+                legislation in 1999).
+              </p>
 
-      			<p>Open government is widely seen to be a key hallmark of contemporary democratic practice and is often linked to the passing of freedom of information legislation. Scandinavian countries claim to have adopted the first freedom of information legislation, dating the origins of its modern provisions to the eighteenth century and Finland continuing the presumption of openness after gaining independence in 1917, passing its Act on Publicity of Official Documents in 1951 (superseded by new legislation in 1999).</p>
+              <p>
+                The United States passed its Freedom of Information Act (FOIA) in 1966,
+                FOIAs, Access to Information Acts (AIAs) or equivalent laws were passed
+                in Denmark and Norway in 1970.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
 
-      			<p>The United States passed its Freedom of Information Act (FOIA) in 1966, FOIAs, Access to Information Acts (AIAs) or equivalent laws were passed in Denmark and Norway in 1970.</p>
+
+  </main>
+
+  <!--Footer-->
+  <footer>
+    <div class="col-sm-12 text-center">
+      <i class="far fa-copyright"></i> &nbsp;2020 TGIF &nbsp;&nbsp;| &nbsp;&nbsp;All rights Reserved</li>
+    </div>
+  </footer>
 
 
-    	</div>    
+  <!--end Footer-->
+
+  <!--Scripts-->
+
+  <script src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+
+  <!--end Scripts-->
 </body>
+
 </html>

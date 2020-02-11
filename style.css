@@ -1,0 +1,131 @@
+/* https://www.house.gov/the-house-explained/officers-and-organizations 
+https: //fonts.google.com/?category=Sans+Serif
+*/
+/* gov colors
+gov blue #154285 
+gov red #c61f0c
+*/
+
+/*GENERAL FORMAT*/
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    /*font-family: "Roboto", sans-serif;*/
+    /*"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;*/
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/*Links*/
+
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: grey;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/*
+header {
+    display: grid;
+    grid-template-areas: "logo contact"
+        "nav nav";
+    width: vw;
+    background-color: #154285;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+*/
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    margin-top: 15px;
+}
+
+.congress-logo {
+    height: 150px;
+}
+
+.header-contact {
+    display: flex;
+    justify-items: flex-end;
+    align-content: flex-end;
+    margin-top: 15px;
+}
+
+.envelope-link {
+    color: white;
+}
+
+.contact-btn {
+    border: 1px solid #ced4da;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+
+/* .nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: inline-block;
+    color: white;
+} */
+
+.navbar {
+    background-color: #c61f0c;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+    color: white;
+}
+
+
+.home-acc-link {
+    color: #c61f0c;
+    font-weight: bold;
+    font-size: 110%;
+}
+
+footer {
+    position: sticky;
+    width: vw;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #154285;
+    color: white;
+    width: 100%;
+}
