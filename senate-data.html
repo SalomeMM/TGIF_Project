@@ -17,7 +17,6 @@
 
 <body>
     <header>
-        <!--header with logo-->
         <div class="header row d-flex flex-row col-sm-12">
             <div class="col-sm-6 header-logo">
                 <a href="index.html"><img class="img-responsive img-fluid congress-logo"
@@ -41,9 +40,6 @@
                 </div>
             </div>
         </div>
-        <!--end header with logo-->
-
-        <!--navigation bar-->
         <nav class="navbar navbar-expand-lg navbar-light col-sm-12 col-md-12">
             <div class="navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -83,53 +79,97 @@
                 </ul>
             </div>
         </nav>
-        <!--end navigation bar-->
     </header>
 
-    <main>
-        <!--Table container-->
-        <div>
-            <h2>Senators</h2>
-            <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the
-                U.S.
-                Constitution. Each state is represented by two senators, regardless of population, who serve staggered
-                six-year terms. The Senate has several exclusive powers not granted to the House, including consenting
-                to
-                treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet
-                secretaries, federal judges, other federal executive officials, military officers, regulatory officials,
-                ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by
-                the
-                House.</p>
-            <table class="table table-striped table-borderless" id="senate-table">
-                <thead>
-                    <tr>
-                        <th>Members</th>
-                        <th>Full name</th>
-                        <th>Party</th>
-                        <th>State</th>
-                        <th>Seniority</th>
-                        <th>Percentage votes</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody">
-                </tbody>
-            </table>
-        </div>
-        </div>
+    <div class="container">
+        <main>
+            <div>
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <h1 class="card-title-text">
+                                Senators
+                            </h1>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p>First convened in 1789, the composition and powers of the Senate are established in Article
+                            One of
+                            the
+                            U.S.
+                            Constitution. Each state is represented by two senators, regardless of population, who serve
+                            staggered
+                            six-year terms. The Senate has several exclusive powers not granted to the House, including
+                            consenting
+                            to
+                            treaties as a precondition to their ratification and consenting to or confirming
+                            appointments of
+                            Cabinet
+                            secretaries, federal judges, other federal executive officials, military officers,
+                            regulatory
+                            officials,
+                            ambassadors, and other federal uniformed officers, as well as trial of federal officials
+                            impeached
+                            by
+                            the
+                            House.</p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <div class="allFilters col-sm-12 col-md-12">
+                                <div class="checkboxes-div">
+                                    <label class="filter-instruction">
+                                        Filter by party:
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="checkboxes" id="democrats" value="D">
+                                        Democrats</label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="checkboxes" id="republicans" value="R">
+                                        Republicans</label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="checkboxes" id="independent" value="I">
+                                        Independent</label>
+                                </div>
+                                <div class="dropdown-div">
+                                    <form name="filter" id="filter-form">
+                                        <label id="state-label" class="filter-instruction">Filter by state:
+                                            <select id="state-filter" class="filter">
+                                            </select>
+                                        </label>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped table-borderless" id="senate-table">
+                                <thead>
+                                    <tr>
+                                        <th>Members</th>
+                                        <th>Full name</th>
+                                        <th>Party</th>
+                                        <th>State</th>
+                                        <th>Seniority</th>
+                                        <th>Percentage votes</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 
-
-    </main>
-
-    <!--Footer-->
     <footer>
         <div class="col-sm-12 text-center">
             <i class="far fa-copyright"></i> &nbsp;2020 TGIF &nbsp;&nbsp;| &nbsp;&nbsp;All rights Reserved</li>
         </div>
     </footer>
-
-    <!--end Footer-->
-
-    <!--Scripts-->
 
     <script src="pro-congress-113-senate.js"></script>
     <script src="statistics.js"></script>

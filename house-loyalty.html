@@ -16,9 +16,7 @@
 </head>
 
 <body>
-
     <header>
-        <!--header with logo-->
         <div class="header row d-flex flex-row col-sm-12">
             <div class="col-sm-6 header-logo">
                 <a href="index.html"><img class="img-responsive img-fluid congress-logo"
@@ -42,8 +40,6 @@
                 </div>
             </div>
         </div>
-        <!--end header with logo-->
-        <!--navigation bar-->
         <nav class="navbar navbar-expand-lg navbar-light col-sm-12">
             <div class="navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -83,78 +79,118 @@
                 </ul>
             </div>
         </nav>
-        <!--end navigation bar-->
     </header>
     <div class="container">
         <main>
             <div class="row">
-                <!--description + at a glance-->
-                <div class="col-sm-6">
-                    <div class="attendance-content">
-                        <h2>Party Loyalty</h2>
-                        <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans
-                            respectively, tend to be the most faithful in voting for their party's nominee for office
-                            and
-                            legislation that backs their party's agenda.</p>
+                <div class="col-sm-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <h1 class="card-title-text">
+                                    Party Loyalty
+                                </h1>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Those who consider themselves to be strong partisans, strong Democrats and strong
+                                Republicans
+                                respectively, tend to
+                                be the most faithful in voting for their party's nominee for office and legislation that
+                                backs
+                                their party's agenda.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <table class="table table-striped table-borderless" id="house-atAglanceTable">
-                        <thead>
-                            <tr>
-                                <th>Party</th>
-                                <th>No. of Reps</th>
-                                <th>% Voted w/ Party</th>
-                            </tr>
-                        </thead>
-                        <tbody id="glancetBody">
-                        </tbody>
-                    </table>
+                <div class="col-sm-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <h1 class="card-title-table">
+                                    House at a glance
+                                </h1>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped table-borderless" id="house-atAglanceTable">
+                                <thead>
+                                    <tr>
+                                        <th>Party</th>
+                                        <th>No. of Reps</th>
+                                        <th>% Voted w/ Party</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="glancetBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-
             <div class="row">
-                <!--less + more-->
-                <div class="col-sm-6">
-                    <table class="table table-striped table-borderless" id="leastLoyalTable">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>No. Party Votes</th>
-                                <th>% Party Votes</th>
-                            </tr>
-                        </thead>
-                        <tbody id="leastLoyaltBody">
-                        </tbody>
-                    </table>
+                <div class="col-sm-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <h1 class="card-title-table">
+                                    Least loyal
+                                </h1>
+                                <h2 class="card-subtitle-table">
+                                    (Bottom 10% of Party)
+                                </h2>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped table-borderless" id="leastLoyalTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>No. Party Votes</th>
+                                        <th>% Party Votes</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leastLoyaltBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                    <table class="table table-striped table-borderless" id="mostLoyalTable">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>No. Party Votes</th>
-                                <th>% Party Votes</th>
-                            </tr>
-                        </thead>
-                        <tbody id="mostLoyaltBody">
-                        </tbody>
-                    </table>
+                <div class="col-sm-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <h1 class="card-title-table">
+                                    Most loyal
+                                </h1>
+                                <h2 class="card-subtitle-table">
+                                    (Top 10% of Party)
+                                </h2>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped table-borderless" id="mostLoyalTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>No. Party Votes</th>
+                                        <th>% Party Votes</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="mostLoyaltBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </main>
     </div>
-    </main>
 
-    <!--Footer-->
     <footer>
         <div class="col-sm-12 text-center">
             <i class="far fa-copyright"></i> &nbsp;2020 TGIF &nbsp;&nbsp;| &nbsp;&nbsp;All rights Reserved</li>
         </div>
     </footer>
-
-    <!--end Footer-->
-    </div>
-    <!--Scripts-->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">

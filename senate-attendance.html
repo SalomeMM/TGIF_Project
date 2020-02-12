@@ -17,7 +17,6 @@
 
 <body>
     <header>
-        <!--header with logo-->
         <div class="header row d-flex flex-row col-sm-12">
             <div class="col-sm-6 header-logo">
                 <a href="index.html"><img class="img-responsive img-fluid congress-logo"
@@ -41,8 +40,6 @@
                 </div>
             </div>
         </div>
-        <!--end header with logo-->
-        <!--navigation bar-->
         <nav class="navbar navbar-expand-lg navbar-light col-sm-12">
             <div class="navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -82,87 +79,134 @@
                 </ul>
             </div>
         </nav>
-        <!--end navigation bar-->
     </header>
 
-    <main>
-        <div class="row">
-            <!--description + at a glance-->
-            <div class="col-sm-6">
-                <div class="attendance-content">
-                    <h2>Attendance</h2>
-                    <p>The Constitution specifies that a majority of members constitutes a quorum to do business in each
-                        house.
-                        Representatives and senators rarely force the presence of a quorum by demanding quorum calls;
-                        thus, in most cases,
-                        debates continue even if a majority is not present.</p>
-                    <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator
-                        stating "aye" or "no"
-                        when his or her name is announced. The House reserves roll-call votes for the most formal
-                        matters, as a roll-call of
-                        all 435 representatives takes quite some time; normally, members vote by electronic device. In
-                        the case of a tie,
-                        the motion in question fails. In the Senate, the Vice President may (if present) cast the
-                        tiebreaking vote.</p>
+    <div class="container">
+        <main>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <h1 class="card-title-text">
+                                    Attendance
+                                </h1>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p>The Constitution specifies that a majority of members constitutes a quorum to do business
+                                in
+                                each
+                                house.
+                                Representatives and senators rarely force the presence of a quorum by demanding quorum
+                                calls;
+                                thus, in most cases,
+                                debates continue even if a majority is not present.</p>
+                            <p>The Senate uses roll-call votes; a clerk calls out the names of all the senators, each
+                                senator
+                                stating "aye" or "no"
+                                when his or her name is announced. The House reserves roll-call votes for the most
+                                formal
+                                matters, as a roll-call of
+                                all 435 representatives takes quite some time; normally, members vote by electronic
+                                device.
+                                In
+                                the case of a tie,
+                                the motion in question fails. In the Senate, the Vice President may (if present) cast
+                                the
+                                tiebreaking vote.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <h1 class="card-title-table">
+                                    Senate at a glance
+                                </h1>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped table-borderless" id="senate-atAglanceTable">
+                                <thead>
+                                    <tr>
+                                        <th>Party</th>
+                                        <th>No. of Reps</th>
+                                        <th>% Voted w/ Party</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="glancetBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <table class="table table-striped table-borderless" id="house-atAglanceTable">
-                    <thead>
-                        <tr>
-                            <th>Party</th>
-                            <th>No. of Reps</th>
-                            <th>% Voted w/ Party</th>
-                        </tr>
-                    </thead>
-                    <tbody id="glancetBody">
-                    </tbody>
-                </table>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <h1 class="card-title-table">
+                                    Least engaged
+                                </h1>
+                                <h2 class="card-subtitle-table">
+                                    (Bottom 10% attendance)
+                                </h2>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped table-borderless" id="leastEngagedTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Missed votes</th>
+                                        <th>% Missed votes</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leastEngagedtBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <h1 class="card-title-table">
+                                    Most engaged
+                                </h1>
+                                <h2 class="card-subtitle-table">
+                                    (Top 10% attendance)
+                                </h2>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped table-borderless" id="mostEngagedTable">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Missed votes</th>
+                                        <th>% Missed votes</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="mostEngagedtBody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
+    </div>
 
-        <div class="row">
-            <!--less + more-->
-            <div class="col-sm-6">
-                <table class="table table-striped table-borderless" id="leastEngagedTable">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Missed votes</th>
-                            <th>% Missed votes</th>
-                        </tr>
-                    </thead>
-                    <tbody id="leastEngagedtBody">
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-sm-6">
-                <table class="table table-striped table-borderless" id="mostEngagedTable">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Missed votes</th>
-                            <th>% Missed votes</th>
-                        </tr>
-                    </thead>
-                    <tbody id="mostEngagedtBody">
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        </div>
-    </main>
-
-    <!--Footer-->
     <footer>
         <div class="col-sm-12 text-center">
             <i class="far fa-copyright"></i> &nbsp;2020 TGIF &nbsp;&nbsp;| &nbsp;&nbsp;All rights Reserved</li>
         </div>
     </footer>
-
-    <!--end Footer-->
-
-    <!--Scripts-->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
@@ -176,6 +220,7 @@
     <script src="pro-congress-113-senate.js"></script>
     <script src="statistics.js"></script>
     <script src="main.js"></script>
+
 </body>
 
 </html>

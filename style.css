@@ -8,44 +8,42 @@ gov red #c61f0c
 
 /*GENERAL FORMAT*/
 
-
-
 * {
-    margin: 0;
-    padding: 0;
-    /*font-family: "Roboto", sans-serif;*/
-    /*"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;*/
+  margin: 0;
+  padding: 0;
+  /*font-family: "Roboto", sans-serif;*/
+  /*"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;*/
 }
 
 body {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 /*Links*/
 
 a:link {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 a:visited {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 a:hover {
-    color: grey;
-    background-color: transparent;
-    text-decoration: none;
+  color: grey;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 a:active {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
 }
 
 /*
@@ -62,70 +60,126 @@ header {
 */
 
 .header {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .header-logo {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .congress-logo {
-    height: 150px;
+  height: 150px;
 }
 
 .header-contact {
-    display: flex;
-    justify-items: flex-end;
-    align-content: flex-end;
-    margin-top: 15px;
+  display: flex;
+  justify-items: flex-end;
+  align-content: flex-end;
+  margin-top: 15px;
 }
 
 .envelope-link {
-    color: white;
+  color: white;
 }
 
 .contact-btn {
-    border: 1px solid #ced4da;
-    border-top-right-radius: 0%;
-    border-bottom-right-radius: 0%;
+  border: 1px solid #ced4da;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
 }
-
-/* .nav {
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    display: inline-block;
-    color: white;
-} */
 
 .navbar {
-    background-color: #c61f0c;
-    color: white;
-    margin-bottom: 15px;
-}
-
-.navbar-custom .navbar-nav .nav-link {
-    color: white;
+  background-color: #c61f0c;
+  margin-bottom: 15px;
 }
 
 .navbar-light .navbar-nav .active>.nav-link {
-    color: white;
+  color: white;
+  font-weight: bold;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
 
 .home-acc-link {
-    color: #c61f0c;
-    font-weight: bold;
-    font-size: 110%;
+  color: #c61f0c;
+  font-weight: bold;
+  font-size: 110%;
 }
 
+.card {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.card-header {
+  width: 100%;
+  /*text-align: center;*/
+}
+
+.card-title-text {
+  color: #0c2f64;
+  font-weight: bold;
+  font-size: 140%;
+  padding-top: 10px;
+}
+
+.card-title-table {
+  color: #c61f0c;
+  font-weight: bold;
+  font-size: 140%;
+  padding-top: 10px;
+}
+
+.card-subtitle-table {
+  color: #c61f0c;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+th {
+  color: #0c2f64;
+}
+
+.allFilters {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.checkboxes-div {
+  padding: 5px;
+}
+
+.checkbox-inline {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.dropdown-div {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 50px;
+}
+
+.filter-instruction {
+  font-weight: bold;
+  color: #c61f0c;
+}
+
+/*
+#c61f0c red
+#0c2f64 blue
+*/
+
 footer {
-    position: sticky;
-    width: vw;
-    padding: 10px;
-    margin-top: 15px;
-    background-color: #154285;
-    color: white;
-    width: 100%;
+  position: sticky;
+  width: vw;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #0c2f64;
+  color: white;
+  width: 100%;
 }

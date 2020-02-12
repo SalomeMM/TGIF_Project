@@ -1,3 +1,5 @@
+// STATISTICS OBJECT
+
 var statistics = {
     atAglance: [{
             name: "Democrats",
@@ -25,6 +27,10 @@ var statistics = {
     leastLoyal10pct: [],
     mostLoyal10pct: [],
 }
+
+// END - STATISTICS OBJECT
+
+// AT A GLANCE
 
 let members = data.results[0].members
 
@@ -68,16 +74,14 @@ for (i = 0; i < members.length; i++) {
     statistics.atAglance[3].pctVoted = sumPctVotesAll / members.length
 }
 
-console.log(statistics)
+// END - AT A GLANCE
 
 // 10% MOST/LEAST ENGAGED MEMBERS
-
 
 leastEngaged = members
 mostEngaged = members
 
-
-//least engaged
+// LEAST ENGAGED
 
 for (let i = 0; i < leastEngaged.length; i++) {
     leastEngaged.sort(function (a, b) {
@@ -85,20 +89,14 @@ for (let i = 0; i < leastEngaged.length; i++) {
     })
 }
 
-//hiba
-// let tenPct = Math.round(leastEngaged.length * 0.1)
-// for (var i = 0; i < tenPct; i++) {
-//     statistics.least_Engaged_pct.push(leastEngaged[i])
-// }
-
-
 for (let n = 0; n < (leastEngaged.length) * 0.1; n++) {
     statistics.leastEngaged10pct.push(leastEngaged[n])
-    console.log(statistics.leastEngaged10pct[n].missed_votes_pct + statistics.leastEngaged10pct[n].first_name + statistics.leastEngaged10pct[n].missed_votes)
+    //console.log(statistics.leastEngaged10pct[n].missed_votes_pct + statistics.leastEngaged10pct[n].first_name + statistics.leastEngaged10pct[n].missed_votes)
     //console.log("length" + statistics.least_Engaged_pct.length)
 }
 
-//most engaged:
+// MOST ENGAGED
+
 for (let i = 0; i < mostEngaged.length; i++) {
     mostEngaged.sort(function (a, b) {
         return a.missed_votes_pct - b.missed_votes_pct
@@ -107,14 +105,19 @@ for (let i = 0; i < mostEngaged.length; i++) {
 
 for (let n = 0; n < (mostEngaged.length) * 0.1; n++) {
     statistics.mostEngaged10pct.push(mostEngaged[n])
-    console.log(statistics.mostEngaged10pct[n].missed_votes_pct + statistics.mostEngaged10pct[n].first_name + statistics.mostEngaged10pct[n].missed_votes)
+    //console.log(statistics.mostEngaged10pct[n].missed_votes_pct + statistics.mostEngaged10pct[n].first_name + statistics.mostEngaged10pct[n].missed_votes)
     //console.log("length" + statistics.least_Engaged_pct.length)
 }
+
+// END 10% MOST/LEAST ENGAGED MEMBERS
+
+// 10% MOST/LEAST LOYAL MEMBERS
 
 leastLoyal = members
 mostLoyal = members
 
-//least loyal:
+// LEAST LOYAL
+
 for (let i = 0; i < leastLoyal.length; i++) {
     leastLoyal.sort(function (a, b) {
         return a.votes_with_party_pct - b.votes_with_party_pct
@@ -123,10 +126,11 @@ for (let i = 0; i < leastLoyal.length; i++) {
 
 for (let n = 0; n < (leastLoyal.length) * 0.1; n++) {
     statistics.leastLoyal10pct.push(leastLoyal[n])
-    console.log(statistics.leastLoyal10pct[n].total_votes + statistics.leastLoyal10pct[n].first_name + statistics.leastLoyal10pct[n].votes_with_party_pct)
+    // console.log(statistics.leastLoyal10pct[n].total_votes + statistics.leastLoyal10pct[n].first_name + statistics.leastLoyal10pct[n].votes_with_party_pct)
 }
 
-//most loyal:
+// MOST LOYAL
+
 for (let i = 0; i < mostLoyal.length; i++) {
     mostLoyal.sort(function (a, b) {
         return b.votes_with_party_pct - a.votes_with_party_pct
@@ -135,10 +139,7 @@ for (let i = 0; i < mostLoyal.length; i++) {
 
 for (let n = 0; n < (mostLoyal.length) * 0.1; n++) {
     statistics.mostLoyal10pct.push(mostLoyal[n])
-    console.log(statistics.mostLoyal10pct[n].total_votes + statistics.mostLoyal10pct[n].first_name + statistics.mostLoyal10pct[n].votes_with_party_pct)
+    //console.log(statistics.mostLoyal10pct[n].total_votes + statistics.mostLoyal10pct[n].first_name + statistics.mostLoyal10pct[n].votes_with_party_pct)
 }
 
-
-
-"votes_with_party_pct"
-"total_votes"
+// END - 10% MOST/LEAST LOYAL MEMBERS
