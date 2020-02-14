@@ -121,8 +121,6 @@ function checkCheckedStates(stateValue, members) {
     renderTable(filteredMembersByState); // show the table with filteredMembersByState
 }
 
-
-
 // CHECKBOX PARTY FILTER
 
 function getCheckboxesValue() {
@@ -264,8 +262,6 @@ var statistics = {
 
 // AT A GLANCE TABLES
 
-// AT A GLANCE calc
-
 function getGlanceTableData(members) {
 
     for (i = 0; i < members.length; i++) {
@@ -315,8 +311,6 @@ function getGlanceTableData(members) {
     }
 }
 
-// END - AT A GLANCE calc
-
 function glanceTable(glance) {
     const glanceTableBody = document.getElementById("glancetBody");
     glanceTableBody.innerHTML = "";
@@ -338,57 +332,29 @@ function glanceTable(glance) {
     }
 }
 
-// if (document.title.includes("attendance")) {
-//     glanceTable(statistics.atAglance);
-// } else if (document.title.includes("loyalty")) {
-//     glanceTable(statistics.atAglance);
-// }
-
 // END - AT A GLANCE TABLES
 
 // ATTENDANCE TABLES
 
-// 10% MOST/LEAST ENGAGED MEMBERS
-
 function getEngagedTableData() {
-
     leastEngaged = members;
     mostEngaged = members;
-
-    // LEAST ENGAGED
-
     for (let i = 0; i < leastEngaged.length; i++) {
         leastEngaged.sort(function (a, b) {
             return b.missed_votes_pct - a.missed_votes_pct;
         });
     }
-
     for (let n = 0; n < leastEngaged.length * 0.1; n++) {
         statistics.leastEngaged10pct.push(leastEngaged[n]);
-        //console.log(statistics.leastEngaged10pct[n].missed_votes_pct + statistics.leastEngaged10pct[n].first_name + statistics.leastEngaged10pct[n].missed_votes)
-        //console.log("length" + statistics.least_Engaged_pct.length)
     }
-
-    // MOST ENGAGED
-
     for (let i = 0; i < mostEngaged.length; i++) {
         mostEngaged.sort(function (a, b) {
             return a.missed_votes_pct - b.missed_votes_pct;
         });
     }
-
     for (let n = 0; n < mostEngaged.length * 0.1; n++) {
         statistics.mostEngaged10pct.push(mostEngaged[n]);
-        //console.log(statistics.mostEngaged10pct[n].missed_votes_pct + statistics.mostEngaged10pct[n].first_name + statistics.mostEngaged10pct[n].missed_votes)
-        //console.log("length" + statistics.least_Engaged_pct.length)
     }
-
-    // END 10% MOST/LEAST ENGAGED MEMBERS
-
-    // if (document.title.includes("attendance")) {
-    //     engagedTable(statistics.leastEngaged10pct, "leastEngagedtBody");
-    //     engagedTable(statistics.mostEngaged10pct, "mostEngagedtBody");
-    // }
 }
 
 function engagedTable(sort_list, str) {
@@ -398,28 +364,23 @@ function engagedTable(sort_list, str) {
         let td1 = document.createElement("td");
         let td2 = document.createElement("td");
         let td3 = document.createElement("td");
+        let a = document.createElement("a");
 
-        if ((str = "leastEngagedtBody")) {
-            td1.innerHTML = sort_list[i].first_name;
-            td2.innerHTML = sort_list[i].missed_votes;
-            td3.innerHTML = sort_list[i].missed_votes_pct.toFixed(2) + " %";
-
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            tr.appendChild(td3);
-
-            engagedTableBody.appendChild(tr);
-        } else if ((str = "mostEngagedtBody")) {
-            td1.innerHTML = sort_list[i].first_name;
-            td2.innerHTML = sort_list[i].missed_votes;
-            td3.innerHTML = sort_list[i].missed_votes_pct.toFixed(2) + " %";
-
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            tr.appendChild(td3);
-
-            engagedTableBody.appendChild(tr);
+        a.href = sort_list[i].url;
+        if (sort_list[i].middle_name == null) {
+            a.innerHTML = ` ${sort_list[i].first_name} ${sort_list[i].last_name}`;
+        } else {
+            a.innerHTML = ` ${sort_list[i].first_name} ${sort_list[i].middle_name} ${sort_list[i].last_name}`;
         }
+        td2.innerHTML = sort_list[i].missed_votes;
+        td3.innerHTML = sort_list[i].missed_votes_pct.toFixed(2) + " %";
+
+        td1.appendChild(a)
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+
+        engagedTableBody.appendChild(tr);
     }
 }
 
@@ -427,28 +388,17 @@ function engagedTable(sort_list, str) {
 
 // LOYALTY TABLES
 
-// 10% MOST/LEAST LOYAL MEMBERS
-
 function getLoyalTableData() {
-
     leastLoyal = members;
     mostLoyal = members;
-
-    // MOST LOYAL CALC
-
     for (let i = 0; i < mostLoyal.length; i++) {
         mostLoyal.sort(function (a, b) {
             return b.votes_with_party_pct - a.votes_with_party_pct;
         });
     }
-
     for (let n = 0; n < mostLoyal.length * 0.1; n++) {
         statistics.mostLoyal10pct.push(mostLoyal[n]);
-        //console.log(statistics.mostLoyal10pct[n].total_votes + statistics.mostLoyal10pct[n].first_name + statistics.mostLoyal10pct[n].votes_with_party_pct)
     }
-
-    // LEAST LOYAL CALC
-
     for (let i = 0; i < leastLoyal.length; i++) {
         leastLoyal.sort(function (a, b) {
             return a.votes_with_party_pct - b.votes_with_party_pct;
@@ -457,16 +407,7 @@ function getLoyalTableData() {
 
     for (let n = 0; n < leastLoyal.length * 0.1; n++) {
         statistics.leastLoyal10pct.push(leastLoyal[n]);
-        // console.log(statistics.leastLoyal10pct[n].total_votes + statistics.leastLoyal10pct[n].first_name + statistics.leastLoyal10pct[n].votes_with_party_pct)
     }
-
-    // END - 10% MOST/LEAST LOYAL MEMBERS CALC
-
-    // if (document.title.includes("loyalty")) {
-    //     loyalTable(statistics.leastLoyal10pct, "leastLoyaltBody");
-    //     loyalTable(statistics.mostLoyal10pct, "mostLoyaltBody");
-    // }
-
 }
 
 function loyalTable(sort_list, str) {
@@ -476,28 +417,23 @@ function loyalTable(sort_list, str) {
         let td1 = document.createElement("td");
         let td2 = document.createElement("td");
         let td3 = document.createElement("td");
+        let a = document.createElement("a");
 
-        if ((str = "leastLoyaltBody")) {
-            td1.innerHTML = sort_list[i].first_name;
-            td2.innerHTML = sort_list[i].total_votes;
-            td3.innerHTML = sort_list[i].votes_with_party_pct.toFixed(2) + " %";
-
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            tr.appendChild(td3);
-
-            loyalTableBody.appendChild(tr);
-        } else if ((str = "mostLoyaltBody")) {
-            td1.innerHTML = sort_list[i].first_name;
-            td2.innerHTML = sort_list[i].total_votes;
-            td3.innerHTML = sort_list[i].votes_with_party_pct.toFixed(2) + " %";
-
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            tr.appendChild(td3);
-
-            loyalTableBody.appendChild(tr);
+        a.href = sort_list[i].url;
+        if (sort_list[i].middle_name == null) {
+            a.innerHTML = ` ${sort_list[i].first_name} ${sort_list[i].last_name}`;
+        } else {
+            a.innerHTML = ` ${sort_list[i].first_name} ${sort_list[i].middle_name} ${sort_list[i].last_name}`;
         }
+        td2.innerHTML = sort_list[i].total_votes;
+        td3.innerHTML = sort_list[i].votes_with_party_pct.toFixed(2) + " %";
+
+        td1.appendChild(a)
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+
+        loyalTableBody.appendChild(tr);
     }
 }
 
