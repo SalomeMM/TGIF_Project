@@ -1,59 +1,44 @@
-let urlHouse = "https://api.propublica.org/congress/v1/113/house/members.json";
-let urlSenate = "https://api.propublica.org/congress/v1/113/senate/members.json";
+// let urlHouse = "https://api.propublica.org/congress/v1/113/house/members.json";
+// let urlSenate = "https://api.propublica.org/congress/v1/113/senate/members.json";
 
-if (document.title.includes("Senate")) {
-    console.log("use senate")
-    fetchMyData(urlSenate)
-}
-if (document.title.includes("House")) {
-    console.log("use house")
-    fetchMyData(urlHouse)
-}
+// if (document.title.includes("senate")) {
+//     console.log("use senate")
+//     fetchMyData(urlSenate)
+// } else {
+//     console.log("use house")
+//     fetchMyData(urlHouse)
+// }
 
-let members = []
+// let members = []
 
-function fetchMyData(url) {
-    fetch(url, {
-            method: "GET",
-            headers: {
-                "X-API-Key": "pNSoIGLiZ9jL6n1QRDK9DhbNUtewlXvH8QplNDTL"
-            }
-        })
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            console.log(data);
-            members = data.results[0].members;
-            if (document.title.includes("data")) {
-                allEventListeners(data);
-                createUniqueStates()
-                getCheckboxesValue()
-                getDropdownValue()
-                filter(members)
-            }
-            if (document.title.includes("attendance")) {
-                getGlanceTableData(members)
-                glanceTable(statistics.atAglance);
-                getEngagedTableData(members);
-                engagedTable(statistics.leastEngaged10pct, "leastEngagedtBody");
-                engagedTable(statistics.mostEngaged10pct, "mostEngagedtBody");
-            } else if (document.title.includes("loyalty")) {
-                getGlanceTableData(members)
-                glanceTable(statistics.atAglance);
-                getLoyalTableData(members);
-                loyalTable(statistics.leastLoyal10pct, "leastLoyaltBody");
-                loyalTable(statistics.mostLoyal10pct, "mostLoyaltBody");
-            } else {
-                console.log("not working")
-            }
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-}
+// function fetchMyData(url) {
+//     fetch(url, {
+//             method: "GET",
+//             headers: {
+//                 "X-API-Key": "pNSoIGLiZ9jL6n1QRDK9DhbNUtewlXvH8QplNDTL"
+//             }
+//         })
+//         .then((response) => {
+//             return response.json();
+//         })
+//         .then((data) => {
+//             console.log(data);
+//             members = data.results[0].members;
+//             if (document.title.includes("data")) {
+//                 allEventListeners();
+//                 createUniqueStates()
+//                 checkCheckedStates()
+//                 getCheckboxesValue()
+//                 getDropdownValue()
+//                 filter(members)
+//             }
+//         })
+//         .catch(function (error) {
+//             console.log(error);
+//         });
+// }
 
-//let members = data.results[0].members;
+let members = data.results[0].members;
 
 // MAIN TABLES w/ filters
 function allEventListeners() {
@@ -78,7 +63,7 @@ function allEventListeners() {
             });
     }
 }
-//allEventListeners(data);
+allEventListeners(data);
 
 // DROPDOWN STATES FILTER
 
@@ -149,6 +134,7 @@ if (document.title.includes("data")) {
 function filter(members) {
     var checkedCheckboxes = getCheckboxesValue();
     var dropdownSelected = getDropdownValue();
+    console.log(dropdownSelected);
     var filteredMembers = [];
 
     if (checkedCheckboxes.length === 0 && dropdownSelected == "all") {
@@ -263,58 +249,55 @@ var statistics = {
 
 // AT A GLANCE TABLES
 
-// AT A GLANCE calc
+// AT A GLANCE
 
-function getGlanceTableData(members) {
-
-    for (i = 0; i < members.length; i++) {
-        if (members[i].party == "D") {
-            statistics.atAglance[0].number++;
-        } else if (members[i].party == "R") {
-            statistics.atAglance[1].number++;
-        } else if (members[i].party == "I") {
-            statistics.atAglance[2].number++;
-        }
-    }
-
-    let pctVotesD = 0;
-    let pctVotesR = 0;
-    let pctVotesI = 0;
-    for (i = 0; i < members.length; i++) {
-        if (members[i].party == "D") {
-            pctVotesD += members[i].votes_with_party_pct;
-            statistics.atAglance[0].pctVoted =
-                pctVotesD / statistics.atAglance[0].number;
-        } else if (members[i].party == "R") {
-            pctVotesR += members[i].votes_with_party_pct;
-            statistics.atAglance[1].pctVoted =
-                pctVotesR / statistics.atAglance[1].number;
-        } else if (members[i].party == "I") {
-            pctVotesI += members[i].votes_with_party_pct;
-            statistics.atAglance[2].pctVoted =
-                pctVotesI / statistics.atAglance[2].number;
-        }
-
-        //total amount of senators:
-        statistics.atAglance[3].number =
-            statistics.atAglance[0].number +
-            statistics.atAglance[1].number +
-            statistics.atAglance[2].number;
-        //sum all pct - method 1
-        sumPctVoted =
-            statistics.atAglance[0].pctVoted +
-            statistics.atAglance[1].pctVoted +
-            statistics.atAglance[2].pctVoted;
-        //average pct - method 1
-        statistics.atAglance[3].pctVoted = sumPctVoted / 3;
-        //sum all pct - method 2
-        sumPctVotesAll = pctVotesD + pctVotesR + pctVotesI;
-        //average pct - method 2
-        statistics.atAglance[3].pctVoted = sumPctVotesAll / members.length;
+for (i = 0; i < members.length; i++) {
+    if (members[i].party == "D") {
+        statistics.atAglance[0].number++;
+    } else if (members[i].party == "R") {
+        statistics.atAglance[1].number++;
+    } else if (members[i].party == "I") {
+        statistics.atAglance[2].number++;
     }
 }
 
-// END - AT A GLANCE calc
+let pctVotesD = 0;
+let pctVotesR = 0;
+let pctVotesI = 0;
+for (i = 0; i < members.length; i++) {
+    if (members[i].party == "D") {
+        pctVotesD += members[i].votes_with_party_pct;
+        statistics.atAglance[0].pctVoted =
+            pctVotesD / statistics.atAglance[0].number;
+    } else if (members[i].party == "R") {
+        pctVotesR += members[i].votes_with_party_pct;
+        statistics.atAglance[1].pctVoted =
+            pctVotesR / statistics.atAglance[1].number;
+    } else if (members[i].party == "I") {
+        pctVotesI += members[i].votes_with_party_pct;
+        statistics.atAglance[2].pctVoted =
+            pctVotesI / statistics.atAglance[2].number;
+    }
+
+    //total amount of senators:
+    statistics.atAglance[3].number =
+        statistics.atAglance[0].number +
+        statistics.atAglance[1].number +
+        statistics.atAglance[2].number;
+    //sum all pct - method 1
+    sumPctVoted =
+        statistics.atAglance[0].pctVoted +
+        statistics.atAglance[1].pctVoted +
+        statistics.atAglance[2].pctVoted;
+    //average pct - method 1
+    statistics.atAglance[3].pctVoted = sumPctVoted / 3;
+    //sum all pct - method 2
+    sumPctVotesAll = pctVotesD + pctVotesR + pctVotesI;
+    //average pct - method 2
+    statistics.atAglance[3].pctVoted = sumPctVotesAll / members.length;
+}
+
+// END - AT A GLANCE
 
 function glanceTable(glance) {
     const glanceTableBody = document.getElementById("glancetBody");
@@ -337,11 +320,11 @@ function glanceTable(glance) {
     }
 }
 
-// if (document.title.includes("attendance")) {
-//     glanceTable(statistics.atAglance);
-// } else if (document.title.includes("loyalty")) {
-//     glanceTable(statistics.atAglance);
-// }
+if (document.title.includes("attendance")) {
+    glanceTable(statistics.atAglance);
+} else if (document.title.includes("loyalty")) {
+    glanceTable(statistics.atAglance);
+}
 
 // END - AT A GLANCE TABLES
 
@@ -349,45 +332,42 @@ function glanceTable(glance) {
 
 // 10% MOST/LEAST ENGAGED MEMBERS
 
-function getEngagedTableData() {
+leastEngaged = members;
+mostEngaged = members;
 
-    leastEngaged = members;
-    mostEngaged = members;
+// LEAST ENGAGED
 
-    // LEAST ENGAGED
+for (let i = 0; i < leastEngaged.length; i++) {
+    leastEngaged.sort(function (a, b) {
+        return b.missed_votes_pct - a.missed_votes_pct;
+    });
+}
 
-    for (let i = 0; i < leastEngaged.length; i++) {
-        leastEngaged.sort(function (a, b) {
-            return b.missed_votes_pct - a.missed_votes_pct;
-        });
-    }
+for (let n = 0; n < leastEngaged.length * 0.1; n++) {
+    statistics.leastEngaged10pct.push(leastEngaged[n]);
+    //console.log(statistics.leastEngaged10pct[n].missed_votes_pct + statistics.leastEngaged10pct[n].first_name + statistics.leastEngaged10pct[n].missed_votes)
+    //console.log("length" + statistics.least_Engaged_pct.length)
+}
 
-    for (let n = 0; n < leastEngaged.length * 0.1; n++) {
-        statistics.leastEngaged10pct.push(leastEngaged[n]);
-        //console.log(statistics.leastEngaged10pct[n].missed_votes_pct + statistics.leastEngaged10pct[n].first_name + statistics.leastEngaged10pct[n].missed_votes)
-        //console.log("length" + statistics.least_Engaged_pct.length)
-    }
+// MOST ENGAGED
 
-    // MOST ENGAGED
+for (let i = 0; i < mostEngaged.length; i++) {
+    mostEngaged.sort(function (a, b) {
+        return a.missed_votes_pct - b.missed_votes_pct;
+    });
+}
 
-    for (let i = 0; i < mostEngaged.length; i++) {
-        mostEngaged.sort(function (a, b) {
-            return a.missed_votes_pct - b.missed_votes_pct;
-        });
-    }
+for (let n = 0; n < mostEngaged.length * 0.1; n++) {
+    statistics.mostEngaged10pct.push(mostEngaged[n]);
+    //console.log(statistics.mostEngaged10pct[n].missed_votes_pct + statistics.mostEngaged10pct[n].first_name + statistics.mostEngaged10pct[n].missed_votes)
+    //console.log("length" + statistics.least_Engaged_pct.length)
+}
 
-    for (let n = 0; n < mostEngaged.length * 0.1; n++) {
-        statistics.mostEngaged10pct.push(mostEngaged[n]);
-        //console.log(statistics.mostEngaged10pct[n].missed_votes_pct + statistics.mostEngaged10pct[n].first_name + statistics.mostEngaged10pct[n].missed_votes)
-        //console.log("length" + statistics.least_Engaged_pct.length)
-    }
+// END 10% MOST/LEAST ENGAGED MEMBERS
 
-    // END 10% MOST/LEAST ENGAGED MEMBERS
-
-    // if (document.title.includes("attendance")) {
-    //     engagedTable(statistics.leastEngaged10pct, "leastEngagedtBody");
-    //     engagedTable(statistics.mostEngaged10pct, "mostEngagedtBody");
-    // }
+if (document.title.includes("attendance")) {
+    engagedTable(statistics.leastEngaged10pct, "leastEngagedtBody");
+    engagedTable(statistics.mostEngaged10pct, "mostEngagedtBody");
 }
 
 function engagedTable(sort_list, str) {
@@ -401,7 +381,7 @@ function engagedTable(sort_list, str) {
         if ((str = "leastEngagedtBody")) {
             td1.innerHTML = sort_list[i].first_name;
             td2.innerHTML = sort_list[i].missed_votes;
-            td3.innerHTML = sort_list[i].missed_votes_pct.toFixed(2) + " %";
+            td3.innerHTML = sort_list[i].missed_votes_pct; //.toFixed(2) + " %"
 
             tr.appendChild(td1);
             tr.appendChild(td2);
@@ -411,7 +391,7 @@ function engagedTable(sort_list, str) {
         } else if ((str = "mostEngagedtBody")) {
             td1.innerHTML = sort_list[i].first_name;
             td2.innerHTML = sort_list[i].missed_votes;
-            td3.innerHTML = sort_list[i].missed_votes_pct.toFixed(2) + " %";
+            td3.innerHTML = sort_list[i].missed_votes_pct; //.toFixed(2) + " %"
 
             tr.appendChild(td1);
             tr.appendChild(td2);
@@ -428,44 +408,40 @@ function engagedTable(sort_list, str) {
 
 // 10% MOST/LEAST LOYAL MEMBERS
 
-function getLoyalTableData() {
+leastLoyal = members;
+mostLoyal = members;
 
-    leastLoyal = members;
-    mostLoyal = members;
+// MOST LOYAL CALC
 
-    // MOST LOYAL CALC
+for (let i = 0; i < mostLoyal.length; i++) {
+    mostLoyal.sort(function (a, b) {
+        return b.votes_with_party_pct - a.votes_with_party_pct;
+    });
+}
 
-    for (let i = 0; i < mostLoyal.length; i++) {
-        mostLoyal.sort(function (a, b) {
-            return b.votes_with_party_pct - a.votes_with_party_pct;
-        });
-    }
+for (let n = 0; n < mostLoyal.length * 0.1; n++) {
+    statistics.mostLoyal10pct.push(mostLoyal[n]);
+    //console.log(statistics.mostLoyal10pct[n].total_votes + statistics.mostLoyal10pct[n].first_name + statistics.mostLoyal10pct[n].votes_with_party_pct)
+}
 
-    for (let n = 0; n < mostLoyal.length * 0.1; n++) {
-        statistics.mostLoyal10pct.push(mostLoyal[n]);
-        //console.log(statistics.mostLoyal10pct[n].total_votes + statistics.mostLoyal10pct[n].first_name + statistics.mostLoyal10pct[n].votes_with_party_pct)
-    }
+// LEAST LOYAL CALC
 
-    // LEAST LOYAL CALC
+for (let i = 0; i < leastLoyal.length; i++) {
+    leastLoyal.sort(function (a, b) {
+        return a.votes_with_party_pct - b.votes_with_party_pct;
+    });
+}
 
-    for (let i = 0; i < leastLoyal.length; i++) {
-        leastLoyal.sort(function (a, b) {
-            return a.votes_with_party_pct - b.votes_with_party_pct;
-        });
-    }
+for (let n = 0; n < leastLoyal.length * 0.1; n++) {
+    statistics.leastLoyal10pct.push(leastLoyal[n]);
+    // console.log(statistics.leastLoyal10pct[n].total_votes + statistics.leastLoyal10pct[n].first_name + statistics.leastLoyal10pct[n].votes_with_party_pct)
+}
 
-    for (let n = 0; n < leastLoyal.length * 0.1; n++) {
-        statistics.leastLoyal10pct.push(leastLoyal[n]);
-        // console.log(statistics.leastLoyal10pct[n].total_votes + statistics.leastLoyal10pct[n].first_name + statistics.leastLoyal10pct[n].votes_with_party_pct)
-    }
+// END - 10% MOST/LEAST LOYAL MEMBERS CALC
 
-    // END - 10% MOST/LEAST LOYAL MEMBERS CALC
-
-    // if (document.title.includes("loyalty")) {
-    //     loyalTable(statistics.leastLoyal10pct, "leastLoyaltBody");
-    //     loyalTable(statistics.mostLoyal10pct, "mostLoyaltBody");
-    // }
-
+if (document.title.includes("loyalty")) {
+    loyalTable(statistics.leastLoyal10pct, "leastLoyaltBody");
+    loyalTable(statistics.mostLoyal10pct, "mostLoyaltBody");
 }
 
 function loyalTable(sort_list, str) {
@@ -479,7 +455,7 @@ function loyalTable(sort_list, str) {
         if ((str = "leastLoyaltBody")) {
             td1.innerHTML = sort_list[i].first_name;
             td2.innerHTML = sort_list[i].total_votes;
-            td3.innerHTML = sort_list[i].votes_with_party_pct.toFixed(2) + " %";
+            td3.innerHTML = sort_list[i].votes_with_party_pct; //.toFixed(2) + " %"
 
             tr.appendChild(td1);
             tr.appendChild(td2);
@@ -489,7 +465,7 @@ function loyalTable(sort_list, str) {
         } else if ((str = "mostLoyaltBody")) {
             td1.innerHTML = sort_list[i].first_name;
             td2.innerHTML = sort_list[i].total_votes;
-            td3.innerHTML = sort_list[i].votes_with_party_pct.toFixed(2) + " %";
+            td3.innerHTML = sort_list[i].votes_with_party_pct; //.toFixed(2) + " %"
 
             tr.appendChild(td1);
             tr.appendChild(td2);
