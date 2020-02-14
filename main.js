@@ -38,14 +38,13 @@ function fetchMyData(url) {
                 getEngagedTableData(members);
                 engagedTable(statistics.leastEngaged10pct, "leastEngagedtBody");
                 engagedTable(statistics.mostEngaged10pct, "mostEngagedtBody");
-            } else if (document.title.includes("loyalty")) {
+            }
+            if (document.title.includes("loyalty")) {
                 getGlanceTableData(members)
                 glanceTable(statistics.atAglance);
                 getLoyalTableData(members);
                 loyalTable(statistics.leastLoyal10pct, "leastLoyaltBody");
                 loyalTable(statistics.mostLoyal10pct, "mostLoyaltBody");
-            } else {
-                console.log("not working")
             }
         })
         .catch(function (error) {
@@ -121,6 +120,8 @@ function checkCheckedStates(stateValue, members) {
     }
     renderTable(filteredMembersByState); // show the table with filteredMembersByState
 }
+
+
 
 // CHECKBOX PARTY FILTER
 
@@ -213,7 +214,7 @@ function renderTable(posts) {
         td3.innerHTML = post.party;
         td4.innerHTML = post.state;
         td5.innerHTML = post.seniority;
-        td6.innerHTML = post.total_votes;
+        td6.innerHTML = post.votes_with_party_pct.toFixed(2) + " %";
 
         td2.appendChild(a);
         tr.appendChild(td1);
@@ -256,7 +257,7 @@ var statistics = {
     leastEngaged10pct: [],
     mostEngaged10pct: [],
     leastLoyal10pct: [],
-    mostLoyal10pct: []
+    mostLoyal10pct: [],
 };
 
 // END - STATISTICS OBJECT
