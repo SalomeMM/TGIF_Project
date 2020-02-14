@@ -1,26 +1,12 @@
-/* https://www.house.gov/the-house-explained/officers-and-organizations 
-https: //fonts.google.com/?category=Sans+Serif
-*/
-/* gov colors
-gov blue #154285 
-gov red #c61f0c
-*/
-
-/*GENERAL FORMAT*/
-
 * {
   margin: 0;
   padding: 0;
-  /*font-family: "Roboto", sans-serif;*/
-  /*"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;*/
 }
 
 body {
   width: 100%;
   height: 100%;
 }
-
-/*Links*/
 
 a:link {
   color: black;
@@ -45,19 +31,6 @@ a:active {
   background-color: transparent;
   text-decoration: none;
 }
-
-/*
-header {
-    display: grid;
-    grid-template-areas: "logo contact"
-        "nav nav";
-    width: vw;
-    background-color: #154285;
-    color: white;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-*/
 
 .header {
   display: flex;
@@ -116,7 +89,6 @@ header {
 
 .card-header {
   width: 100%;
-  /*text-align: center;*/
 }
 
 .card-title-text {
@@ -169,10 +141,15 @@ th {
   color: #c61f0c;
 }
 
-/*
-#c61f0c red
-#0c2f64 blue
-*/
+.container {
+  display: flex;
+}
+
+.side-logo {
+  position: sticky;
+  top: 0;
+  padding: 20px;
+}
 
 footer {
   position: sticky;
