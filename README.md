@@ -1,6 +1,7 @@
 # TGIF_Project
 
-Political website with real-live data from ProPublica API and filters. 
+Political website with real-live data from ProPublica API and filters.  
+Deployed: bit.ly/3ck2cpz
 
 Applied:
 - HTML
