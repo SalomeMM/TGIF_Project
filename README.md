@@ -1,7 +1,7 @@
 # TGIF_Project
 
 Political website with real-live data from ProPublica API and filters.  
-Deployed: https://elastic-kowalevski-eec6cc.netlify.app/
+Deployed: https://bit.ly/3cK2CPz
 
 Applied:
 - HTML
